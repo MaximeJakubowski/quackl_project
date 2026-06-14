@@ -97,7 +97,7 @@ operators, value/node-kind/datatype/range/length/pattern/languageIn tests,
 Out of scope (for now):
 
 - **Validation report.** Validation returns a flat list of violating focus nodes, not a full SHACL validation report. The per-shape SQL in `quackl.translator` and `Store.terms_for_ids` are kept as seams so a report (constraint component, path, value, severity, message) can be added later.
-- **General property paths** (sequence, alternative, zero-or-more, etc.) and non-numeric datatype comparisons (e.g. dates).
+- **General property paths** only IRIs and the `sh:inversePath`, others (sequence, alternative, zero-or-more, etc.) are not supported.
 - **Comparisons between datatypes** is only supported for numeric values (integers, etc.) not for others (like datatime). This applies to `sh:minInclusive`, `sh:lessThan`, etc.
 
 ## Relation to the prototype
