@@ -1,0 +1,8 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix ex: <http://example.org/> .
+
+# Shape 1 of the paper: a Person must have a phone and must NOT have an email.
+ex:PersonShape a sh:NodeShape ;
+    sh:targetClass ex:Person ;
+    sh:property [ sh:path ex:phone ; sh:minCount 1 ] ;
+    sh:not [ sh:property [ sh:path ex:email ; sh:minCount 1 ] ] .

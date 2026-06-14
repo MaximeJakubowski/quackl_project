@@ -1,0 +1,12 @@
+@prefix ex:  <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:alice a ex:Person ;
+    ex:phone "111" .
+
+ex:bob a ex:Person ;
+    ex:phone "222" ;
+    ex:email "bob@example.org" .
+
+ex:carol a ex:Person ;
+    ex:email "carol@example.org" .
