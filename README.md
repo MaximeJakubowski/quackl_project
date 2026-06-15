@@ -9,7 +9,7 @@ It builds on [`slsparser`](https://github.com/MaximeJakubowski/sls_project), whi
 SHACL into a logical syntax tree; `quackl` translates that tree into SQL.
 
 ## Pronounciation
-A duck _quacks_, add an "l" to "quack" and it sounds like SHACL: "quackl".
+A duck _quacks_, add an "l" to "quack" and it sounds a bit like SHACL: "quackl".
 
 ## Installation
 
@@ -34,16 +34,19 @@ for term in violations:
     print(term) # violating focus nodes, as rdflib terms
 ```
 
+`quackl` currently does not support validation reports, it simply prints all targeted 
+nodes from the data graph that violate at least one shape in the shapes graph.
+
 To load once and validate later (e.g. in a different process), back the store
 with a file:
 
 ```python
-# process 1 — load
+# load data into duckdb (file)
 store = Store.create("graph.duckdb")
 load_graph(store, Graph().parse("data.ttl"))
 store.close()
 
-# process 2 — validate (read-only, no reload)
+# validate data stored in duckdb (file)
 store = Store.open("graph.duckdb")
 violations = Validator(store).validate_file("shapes.ttl")
 ```
