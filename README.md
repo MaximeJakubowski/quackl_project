@@ -90,12 +90,18 @@ integer `Node` id, used in the central `Triples` relation.
 | `Numerics` | `Node`, `Value` (double; numeric literals only) |
 | `Triples` | `Subject`, `Predicate`, `Object` (predicate kept as an IRI string) |
 
-## Scope and limitations
+## Scope and purpose
 
-`quackl` covers the SHACL core constraint components (cardinality, logical
-operators, value/node-kind/datatype/range/length/pattern/languageIn tests,
-`equals`, `disjoint`, `closed`, `lessThan(OrEquals)`, `uniqueLang`,
-`hasValue`) over simple paths (a property or an inverse property).
+The intention of `quackl` is to show that SHACL validation using relational technologies
+is not only theoretically feasible, but also performant. While `quackl` itself might 
+not immediately become a W3C-compliant SHACL validator, the ideas behind it are being 
+developed furter (eventually working towards a RDF-SPARQL-SHACL compliant relational-based
+technology stack).
+
+At the moment, `quackl` covers the SHACL core constraint components (cardinality, logical
+operators, value/node-kind/datatype/range/length/pattern/languageIn tests, `equals`, 
+`disjoint`, `closed`, `lessThan(OrEquals)`, `uniqueLang`, `hasValue`) over simple paths 
+(a property or an inverse property).
 
 Out of scope (for now):
 
